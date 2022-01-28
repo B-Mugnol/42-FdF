@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:05:24 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/01/26 22:40:24 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/01/28 19:25:24 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ INCLUDE	:=	$(H_INCLUDE) $(LIBFT_H_INC)
 MLX_LIB_INC	:=	-lmlx -lXext -lX11
 
 
-.PHONY: all
+.PHONY: all norm clean fclean re
 
 all: $(NAME)
 
@@ -55,6 +55,10 @@ $(NAME): $(LIBFT_LIB) $(SRC) $(HEADER)
 
 $(LIBFT_LIB):
 	$(MAKE) -C $(LIBFT_DIR) basic
+
+norm:
+	$(MAKE) -C $(LIBFT_DIR) norm
+	norminette $(SRC) $(HEADER)
 
 clean:
 	rm -rf $(NAME)
