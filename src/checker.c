@@ -6,26 +6,37 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 22:33:41 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/01/28 19:23:10 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/01/28 22:13:19 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	param_checker(int argc, char *map_file)
-{
-	char	*file_extension;
+static int	is_valid_file_extension(const char *file, const char *ext);
 
+int	param_checker(const int argc, const char *map_file)
+{
 	if (argc < 2)
 		return (arg_error("fdf", "Too few arguments."));
 	if (argc > 2)
 		return (arg_error("fdf", "Too many arguments."));
-	file_extension = ft_strrchr(map_file, '.');
-	if (!file_extension || ft_strncmp(file_extension, ".fdf", 4))
-		return (arg_error("fdf", "Wrong file extension."));
-	if (file_extension != ft_strchr(map_file, '.'))
-		return (arg_error("fdf", "Filename cannot contain '.' character."));
-	if (file_extension == map_file)
-		return (arg_error("fdf", "Dotfiles are not allowed."));
+	if (!is_valid_file_extension(map_file, ".fdf"))
+		return (arg_error("fdf", "Invalid file name or extension."));
+	return (1);
+}
+
+static int	is_valid_file_extension(const char *file, const char *ext)
+{
+	size_t	ext_len;
+	size_t	file_len;
+
+	if (!file || !ext)
+		return (0);
+	ext_len = ft_strlen(ext);
+	file_len = ft_strlen(file);
+	if (file_len <= ext_len)
+		return (0);
+	if (ft_strncmp(file + file_len - ext_len, ext, ext_len) != 0)
+		return (0);
 	return (1);
 }

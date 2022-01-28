@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:51:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/01/28 19:02:56 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/01/28 20:31:17 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # include <errno.h>
 
 // checker.c
-int	param_checker(int argc, char *map_file);
+int	param_checker(const int argc, const char *map_file);
 
 // error.c
-int	arg_error(char *err_msg, char *description);
+int	arg_error(const char *err_msg, const char *description);
 
 #endif
