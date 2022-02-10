@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 22:33:41 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/01/28 22:13:19 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/02/10 01:02:17 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 
 static int	is_valid_file_extension(const char *file, const char *ext);
 
-int	param_checker(const int argc, const char *map_file)
+int	is_valid_data(t_data *data)
+{
+	if (data->is_valid != 0)
+		return (1);
+	dismount_mlx(data);
+	return (0);
+}
+
+int	is_valid_param(const int argc, const char *map_file)
 {
 	if (argc < 2)
 		return (arg_error("fdf", "Too few arguments."));

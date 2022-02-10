@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:23:54 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/10 00:24:18 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/02/10 00:29:45 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	put_image_pixel(t_image *image, int x, int y, int color)
 	{
 		while (image->bpp >= 8 * i)
 		{
-			*pixel = (color >> image->bpp - 8 - i * 8) & 0xFF;
+			*pixel = (color >> (image->bpp - 8 - i * 8)) & 0xFF;
 			pixel++;
 			i++;
 		}

@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:51:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/09 19:20:43 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:55:45 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,6 @@ typedef struct s_data {
 	int		is_valid;
 }	t_data;
 
-// typedef struct s_pixel {
-// 	int	x;
-// 	int	y;
-// 	int	color;
-// }	t_pixel;
-
 typedef struct s_point {
 	double	x;
 	double	y;
@@ -55,9 +49,14 @@ int		arg_error(const char *err_msg, const char *description);
 t_data	mlx_error(t_data *data);
 
 // checker.c
-int		param_checker(const int argc, const char *map_file);
+int		is_valid_param(const int argc, const char *map_file);
+int		is_valid_data(t_data *data);
+
+// setup.c
+t_data	mount_mlx(char *filename);
+void	dismount_mlx(t_data *data);
 
 // render.c
-t_data	mount_mlx(void);
+void	put_image_pixel(t_image *image, int x, int y, int color);
 
 #endif
