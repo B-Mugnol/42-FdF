@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 17:22:26 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/10 17:55:26 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:07:48 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_data	mount_mlx(char *filename)
 	return (data);
 }
 
-void dismount_mlx(t_data *data)
+int	dismount_mlx(t_data *data)
 {
 	mlx_clear_window(data->mlx, data->win);
 	mlx_loop_end(data->mlx);
@@ -42,6 +42,7 @@ void dismount_mlx(t_data *data)
 	mlx_destroy_window(data->mlx, data->win);
 	mlx_destroy_display(data->mlx);
 	free(data->mlx);
+	return (1);
 }
 
 static void	draw_background(t_image *image)
