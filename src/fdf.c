@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:27:34 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/10 17:55:55 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:11:38 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	main(int argc, char *argv[])
 		return (0);
 	data = mount_mlx(argv[1]);
 	if (!is_valid_data(&data))
-		return (0);
+		return (dismount_mlx(&data));
+	mlx_hook(data.win, X_KEY_PRESS_EVENT, X_KEY_PRESS_MASK, &key_press_hook, &data);
+	mlx_loop(data.mlx);
 	dismount_mlx(&data);
 	return (1);
 }
