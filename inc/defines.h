@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 20:21:41 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/28 22:27:22 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/02/28 22:52:21 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@
 # define WINDOW_WIDTH	1080
 # define WINDOW_HEIGHT	720
 
-// Image-window ratio (on image's highest dimension)
+// Image-window ratio (on image's largest dimension)
 # define WINDOW_COVERAGE 0.8
 
 // X11 used event codes and their masks
 # define X_KEY_PRESS_EVENT	02
 # define X_KEY_PRESS_MASK	1L
 
-// Key values
+// Keypress values
 # define UP_ARROW_KEY		65362
 # define LEFT_ARROW_KEY		65361
 # define DOWN_ARROW_KEY		65364
@@ -94,7 +94,7 @@ typedef struct s_data {
 	void	*win;
 	t_image	image;
 	t_map	map;
-	int		is_valid;
+	int		is_valid;//
 }	t_data;
 
 #endif
