@@ -6,21 +6,20 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 20:09:27 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/26 18:44:40 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/02/28 20:35:48 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 static void	find_constants(t_point pt, t_map *map);
-// static void	evaluate_initial_points(t_map *map, char **map_line, int y);
 
 void	read_map(int fd, t_map *map)
 {
 	char	*line;
 	char	*temp;
 
-	ft_putendl_fd("Reading file...", 1);
+	ft_putstr_fd("Reading file... ", 1);
 	temp = ft_strdup("");
 	line = get_next_line(fd);
 	while (line)
@@ -38,12 +37,11 @@ void	read_map(int fd, t_map *map)
 
 void	get_base_map(t_map *map)
 {
-	t_point	pt;
 	char	**line;
 	int		x;
 	int		y;
 
-	ft_putendl_fd("Processing file content...", 1);
+	ft_putstr_fd("Processing file content... ", 1);
 	y = -1;
 	map->base_map = malloc(map->lines * sizeof (t_point *));
 	while (++y < map->lines)
@@ -55,12 +53,7 @@ void	get_base_map(t_map *map)
 		map->base_map[y] = malloc(map->columns * sizeof (t_point));
 		x = -1;
 		while (line[++x])
-		{
-			pt.x = (double)(x);
-			pt.y = (double)(y);
-			pt.z = (double)(ft_atoi(line[x]));
-			map->base_map[y][x] = pt;
-		}
+			map->base_map[y][x] = get_point(x, y, line[x]);
 		ft_free_matrix((void *)(&line), map->columns);
 	}
 	ft_free_matrix((void *)(&map->str_map), map->lines);
@@ -72,9 +65,11 @@ void	project_map(t_map *map, int init)
 	int		x;
 	int		y;
 
-	ft_putendl_fd("Calculating points...", 1);
 	if (init == 1)
+	{
+		ft_putstr_fd("Calculating points... ", 1);
 		map->projection = malloc(map->lines * sizeof (t_point *));
+	}
 	y = -1;
 	while (++y < map->lines)
 	{
@@ -102,9 +97,9 @@ void	scale_map(t_map *map)
 	delta_x = map->max.x - map->min.x;
 	delta_y = map->max.y - map->min.y;
 	if (delta_x / WINDOW_WIDTH >= delta_y / WINDOW_HEIGHT)
-		map->scale_factor = WINDOW_COVERAGE * WINDOW_WIDTH / delta_x;
+		map->scale_factor = map->window_coverage * WINDOW_WIDTH / delta_x;
 	else
-		map->scale_factor = WINDOW_COVERAGE * WINDOW_HEIGHT / delta_y;
+		map->scale_factor = map->window_coverage * WINDOW_HEIGHT / delta_y;
 	y = 0;
 	while (y < map->lines)
 	{
@@ -112,8 +107,7 @@ void	scale_map(t_map *map)
 		while (x < map->columns)
 		{
 			scale_point(&map->projection[y][x], map->scale_factor);
-			translate_point(&map->projection[y][x], map->scale_factor,
-				map->max, map->min);
+			translate_point(&map->projection[y][x], *map);
 			x++;
 		}
 		y++;

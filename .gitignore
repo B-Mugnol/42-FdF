@@ -5,6 +5,7 @@
 # Headers
 !inc
 !inc/fdf.h
+!inc/defines.h
 
 # Source
 !src

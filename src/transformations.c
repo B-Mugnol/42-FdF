@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 17:11:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/26 18:46:59 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/02/28 22:27:52 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,48 @@ void	scale_point(t_point *pt, double scale_factor)
 	pt->z = scale_factor * pt->z;
 }
 
-void	translate_point(t_point *pt, double scale_factor, t_point max,
-	t_point min)
+void	translate_point(t_point *pt, t_map map)
 {
 	double	x_translation;
 	double	y_translation;
 
-	if ((max.x - min.x) / WINDOW_WIDTH >= (max.y - min.y) / WINDOW_HEIGHT)
+	if ((map.max.x - map.min.x) / WINDOW_WIDTH >= (map.max.y - map.min.y)
+		/ WINDOW_HEIGHT)
 	{
-		x_translation = 0.5 * (1 - WINDOW_COVERAGE) * WINDOW_WIDTH;
-		y_translation = 0.5 * (WINDOW_HEIGHT - (max.y - min.y) * scale_factor);
+		x_translation = 0.5 * (1 - map.window_coverage) * WINDOW_WIDTH;
+		y_translation = 0.5 * (WINDOW_HEIGHT - (map.max.y - map.min.y)
+				* map.scale_factor);
 	}
 	else
 	{
-		x_translation = 0.5 * (WINDOW_WIDTH - (max.x - min.x) * scale_factor);
-		y_translation = 0.5 * (1 - WINDOW_COVERAGE) * WINDOW_HEIGHT;
+		x_translation = 0.5 * (WINDOW_WIDTH - (map.max.x - map.min.x)
+				* map.scale_factor);
+		y_translation = 0.5 * (1 - map.window_coverage) * WINDOW_HEIGHT;
 	}
-	if (min.x < 0)
-		x_translation += -min.x * scale_factor ;
-	if (min.y < 0)
-		y_translation += -min.y * scale_factor ;
-	pt->x += x_translation;
-	pt->y += y_translation;
+	if (map.min.x < 0)
+		x_translation += -map.min.x * map.scale_factor;
+	if (map.min.y < 0)
+		y_translation += -map.min.y * map.scale_factor;
+	pt->x += x_translation + map.x_translation;
+	pt->y += y_translation + map.y_translation;
+}
+
+t_point	get_point(int x, int y, char *str_z)
+{
+	t_point	pt;
+	char	*color_str;
+
+	pt.x = (double)(x);
+	pt.y = (double)(y);
+	pt.z = (double)(ft_atoi(str_z));
+	color_str = ft_strchr(str_z, 'x');
+	if (color_str)
+	{
+		pt.color = ft_atoi_base(color_str + 1, "0123456789abcedf");
+		if (pt.color == 0)
+			pt.color = ft_atoi_base(color_str + 1, "0123456789ABCDEF");
+	}
+	else
+		pt.color = DEFAULT_COLOR;
+	return (pt);
 }

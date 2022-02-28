@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:05:24 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/02/11 20:10:40 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/02/28 22:36:03 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,10 @@ CFLAGS	:=	-Wall -Wextra -Werror
 
 # FDF
 SRC_DIR		:=	./src
-SRC_FILE	:=	fdf.c	setup.c	render.c	maps.c	hooks.c	error.c	checker.c
+SRC_FILE	:=	fdf.c	setup.c	render.c line_draw.c	maps.c	transformations.c hooks.c	error.c	checker.c
 SRC			:=	$(addprefix $(SRC_DIR)/, $(SRC_FILE))
 
-HEADER_FILE	:=	fdf.h
+HEADER_FILE	:=	fdf.h defines.h
 HEADER_DIR	:=	./inc
 HEADER		:=	$(addprefix $(HEADER_DIR)/, $(HEADER_FILE))
 H_INCLUDE	:=	$(foreach directory, $(HEADER_DIR), -I$(directory))
@@ -45,13 +45,15 @@ INCLUDE	:=	$(H_INCLUDE) $(LIBFT_H_INC)
 # MINILIBX
 MLX_LIB_INC	:=	-lmlx -lXext -lX11
 
+# <math.h>
+MATH_LIB_INC	:= -lm
 
 .PHONY: all norm clean fclean re
 
 all: $(NAME)
 
 $(NAME): $(LIBFT_LIB) $(SRC) $(HEADER)
-	$(CC) $(CFLAGS) -o $@ $(SRC) $(INCLUDE) $(LIBFT_LIB_INC) $(MLX_LIB_INC)
+	$(CC) $(CFLAGS) -o $@ $(SRC) $(INCLUDE) $(LIBFT_LIB_INC) $(MLX_LIB_INC) $(MATH_LIB_INC)
 
 $(LIBFT_LIB):
 	$(MAKE) -C $(LIBFT_DIR) basic
