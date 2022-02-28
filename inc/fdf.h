@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:51:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/28 18:27:48 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/02/28 23:24:17 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	scale_map(t_map *map);
 // render.c
 void	put_image_pixel(t_image *image, int x, int y, int color);
 void	draw_map(t_image image, t_map map);
-void	draw_line_naively(t_image image, t_point p1, t_point p2);
 
 // line_draw.c
 void	draw_line(t_image image, t_point p0, t_point p1);
