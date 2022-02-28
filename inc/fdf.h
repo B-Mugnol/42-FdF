@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:51:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/28 23:24:17 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/02/28 23:25:02 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_data	mlx_error(t_data *data);
 int		arg_error(const char *err_location, const char *description);
 void	fd_error(const char *err_location, const char *description);
 
-// checker.c
+// verifiers.c
 int		param_verifier(const int argc, const char *map_file);
 int		data_verifier(t_data *data);
 int		fd_verifier(int fd);

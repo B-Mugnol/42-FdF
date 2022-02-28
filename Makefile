@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:05:24 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/02/28 22:36:03 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/02/28 23:25:13 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS	:=	-Wall -Wextra -Werror
 
 # FDF
 SRC_DIR		:=	./src
-SRC_FILE	:=	fdf.c	setup.c	render.c line_draw.c	maps.c	transformations.c hooks.c	error.c	checker.c
+SRC_FILE	:=	fdf.c	setup.c	render.c line_draw.c	maps.c	transformations.c hooks.c	error.c	verifiers.c
 SRC			:=	$(addprefix $(SRC_DIR)/, $(SRC_FILE))
 
 HEADER_FILE	:=	fdf.h defines.h
