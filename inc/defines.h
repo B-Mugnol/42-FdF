@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 20:21:41 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 18:15:43 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 20:23:07 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define WINDOW_HEIGHT	720
 
 // Image-window ratio (on image's largest dimension)
-# define WINDOW_COVERAGE 0.8
+# define DEFAULT_WINDOW_COVERAGE 0.8
 
 // X11 used event codes and their masks
 # define X_KEY_PRESS_EVENT	02

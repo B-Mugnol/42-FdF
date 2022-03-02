@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 17:22:26 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 18:14:02 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 20:23:10 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_map	map_init(void)
 	map.projection = NULL;
 	map.z_scale = 1;
 	map.scale_factor = 1;
-	map.window_coverage = .8;
+	map.window_coverage = DEFAULT_WINDOW_COVERAGE;
 	map.lines = 0;
 	map.columns = 0;
 	map.x_translation = 0;
