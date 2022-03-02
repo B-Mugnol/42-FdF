@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:27:34 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 17:08:13 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:18:58 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,16 +79,12 @@ int	mlx_controller(t_data *data, t_map *map, int init)
 		mlx_expose_hook(data->win, &rerender, data);
 		mlx_loop(data->mlx);
 		dismount_mlx(data);
+		return (1);
 	}
-	else if (init == 0)
-	{
-		draw_background(&(data->image));
-		draw_map(data->image, data->map);
-		mlx_put_image_to_window(data->mlx, data->win, data->image.mlx_img,
-			0, 0);
-	}
-	else
-		dismount_mlx(data);
+	draw_background(&(data->image));
+	draw_map(data->image, data->map);
+	mlx_put_image_to_window(data->mlx, data->win, data->image.mlx_img,
+		0, 0);
 	return (1);
 }
 
