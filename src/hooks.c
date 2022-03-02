@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:19:54 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 17:31:21 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:19:17 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	key_press_hook(int keycode, t_data *data)
 		data->map.z_scale += 0.1;
 	map_controller(data->filename, &(data->map), 0);
 	mlx_controller(data, &(data->map), 0);
-	return (0);
+	return (1);
 }
 
 static void	wasd_key_press(int keycode, t_data *data)
