@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:05:24 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/03/02 20:08:28 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/03/02 20:19:55 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,22 +39,24 @@ LIBFT_LIB		:=	$(LIBFT_DIR)/libft.a
 LIBFT_LIB_INC	:=	-L $(LIBFT_DIR) -lft
 
 
-# All headers inclusion:
-INCLUDE	:=	$(H_INCLUDE) $(LIBFT_H_INC)
-
-
 # MINILIBX
 MLX_LIB_INC	:=	-lmlx -lXext -lX11
 
-# <math.h>
+# <math.h> library
 MATH_LIB_INC	:= -lm
+
+
+# All headers inclusion:
+INCLUDE	:=	$(H_INCLUDE) $(LIBFT_H_INC)
+# All libraries inclusion:
+LIB_INCLUDE	:=	$(LIBFT_LIB_INC) $(MLX_LIB_INC) $(MATH_LIB_INC)
 
 .PHONY: all norm clean fclean re
 
 all: $(NAME)
 
 $(NAME): $(LIBFT_LIB) $(SRC) $(HEADER)
-	$(CC) $(CFLAGS) -o $@ $(SRC) $(INCLUDE) $(LIBFT_LIB_INC) $(MLX_LIB_INC) $(MATH_LIB_INC)
+	$(CC) $(CFLAGS) -o $@ $(SRC) $(INCLUDE) $(LIB_INCLUDE)
 
 $(LIBFT_LIB):
 	$(MAKE) -C $(LIBFT_DIR) basic
