@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:19:54 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 18:19:17 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:28:45 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ int	key_press_hook(int keycode, t_data *data)
 static void	wasd_key_press(int keycode, t_data *data)
 {
 	if (keycode == KEY_W)
-		data->map.rotation.x_rot -= 15 * DEG_TO_RAD;
+		data->map.rotation.x_rot -= 17.63 * DEG_TO_RAD;
 	if (keycode == KEY_S)
-		data->map.rotation.x_rot += 15 * DEG_TO_RAD;
+		data->map.rotation.x_rot += 17.63 * DEG_TO_RAD;
 	if (keycode == KEY_A)
 		data->map.rotation.z_rot -= 15 * DEG_TO_RAD;
 	if (keycode == KEY_D)
