@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 17:22:26 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/28 20:21:14 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:14:02 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ t_data	mount_mlx(char *filename)
 
 	data.mlx = mlx_init();
 	if (!data.mlx)
-		return (mlx_error(&data));
+		return (mlx_error(&data, "mlx_init", "Mlx setup failed."));
 	data.win = mlx_new_window(data.mlx, WINDOW_WIDTH, WINDOW_HEIGHT, filename);
 	if (!data.win)
-		return (mlx_error(&data));
+		return (mlx_error(&data, "mlx_new_window", "Mlx setup failed."));
 	data.image.mlx_img = mlx_new_image(data.mlx, WINDOW_WIDTH, WINDOW_HEIGHT);
 	if (!data.image.mlx_img)
-		return (mlx_error(&data));
+		return (mlx_error(&data, "mlx_new_image", "Mlx setup failed."));
 	data.image.addr = mlx_get_data_addr(data.image.mlx_img, &(data.image.bpp),
 			&(data.image.line_size), &(data.image.endian));
 	data.filename = filename;

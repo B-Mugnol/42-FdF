@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:51:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 17:39:45 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:15:50 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ int		key_press_hook(int keycode, t_data *data);
 int		mouse_hook(t_data *data);
 
 // error.c
-t_data	mlx_error(t_data *data);
+t_data	mlx_error(t_data *data, const char *err_location,
+			const char *description);
 int		arg_error(const char *err_location, const char *description);
 void	fd_error(const char *err_location, const char *description);
 
