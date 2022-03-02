@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:05:24 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/03/02 20:19:55 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/03/02 20:24:47 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ MATH_LIB_INC	:= -lm
 INCLUDE	:=	$(H_INCLUDE) $(LIBFT_H_INC)
 # All libraries inclusion:
 LIB_INCLUDE	:=	$(LIBFT_LIB_INC) $(MLX_LIB_INC) $(MATH_LIB_INC)
+
 
 .PHONY: all norm clean fclean re
 
