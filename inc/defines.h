@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 20:21:41 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 17:40:58 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:15:43 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ typedef struct s_data {
 	void	*win;
 	t_image	image;
 	t_map	map;
-	int		is_valid;//
+	int		is_valid;
 }	t_data;
 
 #endif
