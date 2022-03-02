@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:27:34 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 18:18:58 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 20:31:33 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	map_controller(char *filename, t_map *map, int init)
 		if (fd_verifier(fd))
 			return (0);
 		read_map(fd, map);
+		close(fd);
 		get_base_map(map);
 		project_map(map, init);
 		scale_map(map);
