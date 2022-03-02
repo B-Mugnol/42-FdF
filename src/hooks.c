@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:19:54 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/28 20:29:42 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:31:21 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 static void	wasd_key_press(int keycode, t_data *data);
 static void	arrow_key_press(int keycode, t_data *data);
+
+int	mouse_hook(t_data *data)
+{
+	mlx_loop_end(data->mlx);
+	return (1);
+}
 
 int	key_press_hook(int keycode, t_data *data)
 {

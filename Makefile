@@ -6,14 +6,14 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:05:24 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/02/28 23:25:13 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/02/28 23:29:50 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:=	fdf
 
 CC		:=	gcc
-CFLAGS	:=	-Wall -Wextra -Werror
+CFLAGS	:=	#-Wall -Wextra -Werror
 
 
 # FDF

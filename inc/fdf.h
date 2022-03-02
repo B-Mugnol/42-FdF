@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:51:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/28 23:25:02 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:39:45 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ t_point	get_point(int x, int y, char *str_z);
 
 // hooks.c
 int		key_press_hook(int keycode, t_data *data);
+int		mouse_hook(t_data *data);
 
 // error.c
 t_data	mlx_error(t_data *data);

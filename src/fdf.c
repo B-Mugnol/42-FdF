@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:27:34 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/28 23:22:13 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:08:13 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ int	mlx_controller(t_data *data, t_map *map, int init)
 			0, 0);
 		mlx_hook(data->win, X_KEY_PRESS_EVENT, X_KEY_PRESS_MASK,
 			&key_press_hook, data);
+		mlx_hook(data->win, X_DESTROY_NOTIFY_EVENT, X_DESTROY_NOTIFY_MASK,
+			&mouse_hook, data);
 		mlx_expose_hook(data->win, &rerender, data);
 		mlx_loop(data->mlx);
 		dismount_mlx(data);
