@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   verifiers.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 22:33:41 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/24 20:34:19 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:12:43 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	fd_verifier(int fd)
 
 int	data_verifier(t_data *data)
 {
-	if (data->is_valid > 0)
+	if (data->is_valid == 1)
 		return (0);
 	dismount_mlx(data);
 	return (1);
