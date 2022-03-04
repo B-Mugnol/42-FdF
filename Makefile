@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:05:24 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/03/04 18:28:12 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/03/04 18:45:34 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ LIBFT_LIB_INC	:=	-L $(LIBFT_DIR) -lftprintf
 
 
 # MINILIBX
-MLX_LIB_INC	:=	-lmlx -lXext -lX11
+MLX_LIB_INC		:=	-lmlx -lXext -lX11
 
 # <math.h> library
 MATH_LIB_INC	:= -lm
