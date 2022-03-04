@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:05:24 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/03/02 20:24:47 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/03/04 18:28:12 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,12 +31,13 @@ H_INCLUDE	:=	$(foreach directory, $(HEADER_DIR), -I$(directory))
 # LIBFT
 LIBFT_DIR		:=	../libft
 
+LIBFT_H_FILE	:=	libft.h ft_printf.h
 LIBFT_H_DIR		:=	$(LIBFT_DIR)/inc
-LIBFT_HEADER	:=	$(LIBFT_H_DIR)/libft.h
+LIBFT_HEADER	:=	$(addprefix $(LIBFT_H_DIR)/, $(LIBFT_H_FILE))
 LIBFT_H_INC		:=	-I$(LIBFT_H_DIR)
 
-LIBFT_LIB		:=	$(LIBFT_DIR)/libft.a
-LIBFT_LIB_INC	:=	-L $(LIBFT_DIR) -lft
+LIBFT_LIB		:=	$(LIBFT_DIR)/libftprintf.a
+LIBFT_LIB_INC	:=	-L $(LIBFT_DIR) -lftprintf
 
 
 # MINILIBX
@@ -60,7 +61,7 @@ $(NAME): $(LIBFT_LIB) $(SRC) $(HEADER)
 	$(CC) $(CFLAGS) -o $@ $(SRC) $(INCLUDE) $(LIB_INCLUDE)
 
 $(LIBFT_LIB):
-	$(MAKE) -C $(LIBFT_DIR) basic
+	$(MAKE) -C $(LIBFT_DIR) printf
 
 norm:
 	@$(MAKE) -C $(LIBFT_DIR) norm
@@ -70,7 +71,8 @@ clean:
 	rm -rf $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) clean
 
-fclean: clean
+fclean:
+	rm -rf $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
