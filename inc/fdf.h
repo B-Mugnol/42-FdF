@@ -6,22 +6,22 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:51:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 18:15:50 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/04 01:26:35 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
+# include "defines.h"	// Defines structs and constants used in the program
+# include "ft_printf.h"	// Used for ft_printf function
 # include "libft.h"	// Libft
 # include <mlx.h>	// Minilibx
 # include <math.h>	// C Math library
-# include <stdio.h>	// Standard Input-Output library (used for error messages)
 # include <fcntl.h>	// File control options (used to open file)
-# include <errno.h>	// Defines the variable errno (used in function 'perror')
+# include <string.h>// Defines the strerror function (used for error messages)
 # include <unistd.h>// Used for write, read, and close functions
 # include <stdlib.h>// Used for malloc and free functions
-# include "defines.h" // Defines structs and constants used in the program
 
 // main.c
 int		map_controller(char *filename, t_map *map, int init);
@@ -48,20 +48,20 @@ void	draw_map(t_image image, t_map map);
 void	draw_line(t_image image, t_point p0, t_point p1);
 
 // transformations.c
+t_point	get_point(int x, int y, char *str_z);
 void	rotate_point(t_point *pt, t_rot r);
 void	scale_point(t_point *pt, double scale_factor);
 void	translate_point(t_point *pt, t_map map);
-t_point	get_point(int x, int y, char *str_z);
 
 // hooks.c
-int		key_press_hook(int keycode, t_data *data);
 int		mouse_hook(t_data *data);
+int		key_press_hook(int keycode, t_data *data);
 
 // error.c
+void	fd_error(const char *err_location, const char *description);
+int		arg_error(const char *err_location, const char *description);
 t_data	mlx_error(t_data *data, const char *err_location,
 			const char *description);
-int		arg_error(const char *err_location, const char *description);
-void	fd_error(const char *err_location, const char *description);
 
 // verifiers.c
 int		param_verifier(const int argc, const char *map_file);

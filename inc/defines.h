@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 20:21:41 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 20:23:07 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/04 01:27:52 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // Constant to transform radians into degrees (PI / 180)
 # define DEG_TO_RAD		0.017453
 
-// Default color value
+// Default color value (gray)
 # define DEFAULT_COLOR	0x808080
 
 // Screen size
@@ -51,6 +51,17 @@
 # define KEY_D	100
 # define KEY_Q	113
 # define KEY_E	101
+
+// Error codes (values used as defined in <errno.h>)
+# ifndef EBADF
+#  define EBADF		9
+# endif
+# ifndef EINVAL
+#  define EINVAL	22
+# endif
+# ifndef ECANCELED
+#  define ECANCELED	125
+# endif
 
 typedef struct s_point
 {
