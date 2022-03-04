@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:27:34 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/04 18:14:57 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/04 19:01:38 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	main(int argc, char *argv[])
 	data.filename = argv[1];
 	if (!map_controller(data.filename, &map, 1))
 		return (map_controller(data.filename, &map, -1));
-	ft_putendl_fd("\nUse 'WASD' to rotate camera angle,\
-	 	\nArrow keys to move the camera around,\
-		\n'QE' to decrease or increase the height's scale,\
+	ft_putendl_fd("\nUse arrow keys to move the camera around,\
+		\n'PageUp/PageDown' to increase or decrease the height's scale,\
+		\n 'WASDQE' to rotate camera angle in around x, z and y axis,\
 		\n'+-' to zoom in and out.", 1);
 	mlx_controller(&data, &map, 1);
 	map_controller(data.filename, &map, -1);

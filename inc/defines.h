@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 20:21:41 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/04 01:27:52 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:56:13 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@
 # define KEY_MINUS			45
 # define KEY_PLUS_NUMPAD	65451
 # define KEY_MINUS_NUMPAD	65453
+# define KEY_PAGE_UP		65365
+# define KEY_PAGE_DOWN		65366
 
 # define KEY_W	119
 # define KEY_A	97
