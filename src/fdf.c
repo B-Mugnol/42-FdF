@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:27:34 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/02 20:31:33 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/04 01:22:33 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char *argv[])
 		return (map_controller(data.filename, &map, -1));
 	ft_putendl_fd("\nUse WASD to rotate camera angle,\
 	 	\nArrow keys to move the camera around,\
-		\nand QE to decrease or increase the height scale.", 1);
+		\nand QE to decrease or increase the height's scale.", 1);
 	mlx_controller(&data, &map, 1);
 	map_controller(data.filename, &map, -1);
 	ft_putendl_fd("Program terminated succesfully.", 1);
