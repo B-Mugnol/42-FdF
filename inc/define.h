@@ -6,18 +6,12 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 20:21:41 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/05 19:29:20 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/05 19:54:11 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINE_H
 # define DEFINE_H
-
-// Constant to transform radians into degrees (PI / 180)
-# define DEG_TO_RAD		0.017453
-
-// Default color value (gray)
-# define DEFAULT_COLOR	0x808080
 
 // Screen size
 # define WINDOW_WIDTH	1080
@@ -25,6 +19,16 @@
 
 // Image-window ratio (on image's largest dimension)
 # define DEFAULT_WINDOW_COVERAGE 0.8
+
+// Constant to transform radians into degrees (PI / 180)
+# define DEG_TO_RAD		0.017453
+
+// Default color value (gray)
+# define DEFAULT_COLOR	0x808080
+
+// String of all digits (in crescent order) of a hexadecimal base
+# define HEXA_LOWERCASE_BASE	"0123456789abcedf"
+# define HEXA_UPPERCASE_BASE	"0123456789ABCDEF"
 
 // X11 used event codes and their masks
 # define X_KEY_PRESS_EVENT	02

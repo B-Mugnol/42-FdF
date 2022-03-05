@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 17:11:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/05 19:28:38 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/05 19:59:43 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,9 @@ t_point	get_point(int x, int y, char *str_z)
 	color_str = ft_strchr(str_z, 'x');
 	if (color_str)
 	{
-		pt.color = ft_atoi_base(color_str + 1, "0123456789abcedf");
+		pt.color = ft_atoi_base(color_str + 1, HEXA_LOWERCASE_BASE);
 		if (pt.color == 0)
-			pt.color = ft_atoi_base(color_str + 1, "0123456789ABCDEF");
+			pt.color = ft_atoi_base(color_str + 1, HEXA_UPPERCASE_BASE);
 	}
 	else
 		pt.color = DEFAULT_COLOR;
