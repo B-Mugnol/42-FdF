@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 20:21:41 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/05 19:54:11 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/05 20:28:24 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@
 
 // Keypress values
 # define UP_ARROW_KEY		65362
-# define LEFT_ARROW_KEY		65361
 # define DOWN_ARROW_KEY		65364
+# define LEFT_ARROW_KEY		65361
 # define RIGHT_ARROW_KEY	65363
 
 # define KEY_ESC			65307
