@@ -6,23 +6,23 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:05:24 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/03/04 18:45:34 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/03/05 19:36:31 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:=	fdf
 
 CC		:=	gcc
-CFLAGS	:=	#-Wall -Wextra -Werror
+CFLAGS	:=	-Wall -Wextra -Werror
 
 
 # FDF
 SRC_DIR		:=	./src
-SRC_FILE	:=	error.c fdf.c hooks.c line_draw.c maps.c render.c setup.c
-SRC_FILE	+=	transformations.c verifiers.c
+SRC_FILE	:=	error.c fdf.c hook.c line_draw.c map.c render.c setup.c
+SRC_FILE	+=	transformation.c verifier.c
 SRC			:=	$(addprefix $(SRC_DIR)/, $(SRC_FILE))
 
-HEADER_FILE	:=	fdf.h defines.h
+HEADER_FILE	:=	fdf.h define.h struct.h
 HEADER_DIR	:=	./inc
 HEADER		:=	$(addprefix $(HEADER_DIR)/, $(HEADER_FILE))
 H_INCLUDE	:=	$(foreach directory, $(HEADER_DIR), -I$(directory))
