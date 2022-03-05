@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 20:09:27 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/02/28 20:35:48 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/04 19:39:23 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	read_map(int fd, t_map *map)
 		temp = ft_strmerge(temp, line);
 		line = get_next_line(fd);
 	}
-	close(fd);
 	free(line);
 	map->str_map = ft_split(temp, '\n');
 	free(temp);
