@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hooks.c                                            :+:      :+:    :+:   */
+/*   hook.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:19:54 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/03/04 19:03:49 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/03/05 20:04:43 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	key_press_hook(int keycode, t_data *data)
 		|| keycode == LEFT_ARROW_KEY || keycode == RIGHT_ARROW_KEY)
 		arrow_key_press(keycode, data);
 	if (keycode == KEY_PLUS || keycode == KEY_PLUS_NUMPAD)
-		data->map.window_coverage *= 1.1;
+		data->map.window_coverage += 0.1;
 	if (keycode == KEY_MINUS || keycode == KEY_MINUS_NUMPAD)
-		data->map.window_coverage *= 0.9;
+		data->map.window_coverage -= 0.1;
 	if (keycode == KEY_PAGE_UP)
 		data->map.z_scale *= 1.1;
 	if (keycode == KEY_PAGE_DOWN)
