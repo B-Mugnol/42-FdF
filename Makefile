@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:05:24 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/03/05 19:44:01 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/03/05 19:44:43 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ MATH_LIB_INC	:=	-lm
 
 
 # All headers inclusion:
-INCLUDE	:=	$(H_INCLUDE) $(LIBFT_H_INC)
+INCLUDE		:=	$(H_INCLUDE) $(LIBFT_H_INC)
 # All libraries inclusion:
 LIB_INCLUDE	:=	$(LIBFT_LIB_INC) $(MLX_LIB_INC) $(MATH_LIB_INC)
 
